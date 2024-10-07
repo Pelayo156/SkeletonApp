@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <!-- Bloque para obtener post que el usuario elija -->
+  <div class="container">
+    <h2>Obtener Post</h2>
+    <ion-item>
+      <ion-input [(ngModel)]="idSelected" label="Ingrese un número" type="number" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-button fill="outline" (click)="getPost(idSelected)" class="btn-form">Obtener post</ion-button>
+  </div>
+
+  <!-- Bloque para crear post según datos ingresados por el usuario -->
+  <div class="container">
+    <h2>Crear post</h2>
+    <ion-item>
+      <ion-input [(ngModel)]="title" label="Ingrese un título" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="body" label="Ingrese cuerpo del post" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="userId" label="Ingrese user ID" type="number" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-button color="dark" fill="outline" class="btn-form" (click)="createPost(title, body, userId)">Crear post</ion-button>
+  </div>
+
+  <!-- Bloque para eliminar un post -->
+  <div class="container">
+    <h2>Eliminar post</h2>
+    <ion-item>
+      <ion-input [(ngModel)]="idSelected" label="Ingrese un número" type="number" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-button color="danger" fill="outline" class="btn-form" (click)="deletePost(idSelected)">Eliminar post</ion-button>
+  </div>
+
+  <!-- Bloque para editar objeto -->
+  <div class="container">
+    <h2>Editar objeto</h2>
+    <ion-item>
+      <ion-input [(ngModel)]="idSelected" label="Ingrese ID de objeto a modificar" type="number" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="title" label="Ingrese un título" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="body" label="Ingrese cuerpo del post" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="userId" label="Ingrese user ID" type="number" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-button color="warning" fill="outline" class="btn-form" (click)="editPost(idSelected, title, body, userId)">Editar post</ion-button>
+  </div>
+</ion-content>
